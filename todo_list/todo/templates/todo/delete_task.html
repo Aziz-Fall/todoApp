@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{% block container %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <h4 class="border-left-0 border-top-0 border-right-0 border border-primary">Tasks to do</h4>
+        <div class="border border-primary m-2 p-1">
+            <p>{{task.task_name}}  {{task.date|date:"d M Y"}}</p>
+            <a href="{% url 'home' %}" class="btn btn-outline-success">Home</a>
+            <a href="{% url 'delete_task' task.id %}" class="btn btn-outline-danger">Confirm to delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
